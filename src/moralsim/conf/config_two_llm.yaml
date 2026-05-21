@@ -40,3 +40,4 @@ hydra:
     - pkg://moralsim.scenarios.pollution.conf
     - pkg://moralsim.scenarios.prisoner.conf
     - pkg://moralsim.scenarios.publicgoods.conf
+    - pkg://moralsim.scenarios.volunteer.conf
