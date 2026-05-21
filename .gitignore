@@ -10,4 +10,7 @@ results/
 outputs/
 wandb/
 api_usage_openrouter/
-api_usage/
+api_usage/# hydra outputs
+multirun/
+src/multirun/
+outputs/
