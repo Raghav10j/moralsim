@@ -12,7 +12,7 @@ import pandas as pd
 
 from abc import ABC, abstractmethod
 import logging
-import wandb
+from moralsim.utils.wandb_compat import wandb
 
 logger = logging.getLogger(__name__)
 

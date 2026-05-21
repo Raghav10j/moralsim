@@ -12,13 +12,14 @@ from hydra.core.global_hydra import GlobalHydra
 from omegaconf import DictConfig, OmegaConf
 from transformers import set_seed
 
-import wandb
 from pathfinder import get_model
 from moralsim.utils import ModelWandbWrapper, WandbLogger
+from moralsim.utils.wandb_compat import wandb
 
 from .persona import EmbeddingModel
 from .scenarios.publicgoods.run import run as run_scenario_publicgoods
 from .scenarios.prisoner.run import run as run_scenario_prisoner
+from .scenarios.volunteer.run import run as run_scenario_volunteer
 
 
 @hydra.main(version_base=None, config_path="conf", config_name="config")
@@ -135,6 +136,16 @@ def main(cfg: DictConfig):
         )
     elif cfg.experiment.scenario in ["pd_production", "pd_base", "pd_privacy", "pd_venture"]:
         run_scenario_prisoner(
+            cfg.experiment,
+            wandb_logger,
+            wrappers,
+            wrapper_framework,
+            embedding_model,
+            experiment_storage,
+            seed=cfg.seed
+        )
+    elif cfg.experiment.scenario in ["vd_base"]:
+        run_scenario_volunteer(
             cfg.experiment,
             wandb_logger,
             wrappers,

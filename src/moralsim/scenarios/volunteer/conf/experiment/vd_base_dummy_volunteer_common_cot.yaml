@@ -1,0 +1,11 @@
+defaults:
+  - vd_base_baseline
+  - override persona@personas.persona_1: dummy_volunteer
+
+name: vd_base_dummy_volunteer_common_cot
+
+env:
+  name: vd_base_dummy_volunteer_common_cot
+
+agent:
+  knowledge_condition: common

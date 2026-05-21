@@ -1,0 +1,38 @@
+name: vd_base_baseline
+scenario: vd_base
+
+defaults:
+  - persona@personas.persona_0: baseline_citizen
+  - persona@personas.persona_1: baseline_citizen
+
+env:
+  name: vd_base_baseline
+  max_num_rounds: 1
+  num_agents: 2
+  volunteer_payoff: 0.5
+  free_rider_payoff: 1.0
+  no_one_payoff: 0
+  min_payoff_to_survive: null
+  perturbations: []
+  event_expiration_months: 3
+
+personas:
+  num: ${experiment.env.num_agents}
+  persona_0:
+    name: Alex
+  persona_1:
+    name: Sam
+
+agent:
+  system_prompt: nocom
+  knowledge_condition: common
+  cot_prompt: null
+  act:
+    consider_identity_persona: true
+
+  reflect:
+    exclude_thoughts_from_prompt: true
+
+  store:
+    expiration_delta:
+      days: 100

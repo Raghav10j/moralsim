@@ -1,0 +1,11 @@
+defaults:
+  - vd_base_baseline
+  - override persona@personas.persona_1: dummy_shirker
+
+name: vd_base_dummy_shirker_private_cot
+
+env:
+  name: vd_base_dummy_shirker_private_cot
+
+agent:
+  knowledge_condition: private

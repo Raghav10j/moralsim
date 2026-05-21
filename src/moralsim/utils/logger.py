@@ -2,10 +2,8 @@ import datetime
 import logging
 import os
 
-import wandb
-
 # import weasyprint
-from wandb.sdk.data_types import trace_tree
+from .wandb_compat import wandb, trace_tree
 from pathfinder.api import TokenCounter
 
 # Suppress annoying fontTools messages

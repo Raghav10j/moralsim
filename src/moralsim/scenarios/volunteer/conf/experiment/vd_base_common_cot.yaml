@@ -1,0 +1,10 @@
+defaults:
+  - vd_base_baseline
+
+name: vd_base_common_cot
+
+env:
+  name: vd_base_common_cot
+
+agent:
+  knowledge_condition: common

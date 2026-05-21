@@ -13,9 +13,9 @@ mix_llm: [] # disable
 
 seed: 0
 debug: false  
-result_dir: results
+result_dir: results/llama-3.3-70b
 defaults:
-- experiment: basic
+- experiment: vd_base_baseline
 
 
 hydra:
@@ -27,3 +27,4 @@ hydra:
     - pkg://moralsim.scenarios.pollution.conf
     - pkg://moralsim.scenarios.prisoner.conf
     - pkg://moralsim.scenarios.publicgoods.conf
+    - pkg://moralsim.scenarios.volunteer.conf
